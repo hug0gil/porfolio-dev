@@ -1,0 +1,72 @@
+---
+import LaravelIcon from "../icons/Laravel.astro"
+import AngularIcon from "../icons/Angular.astro"
+import TailwindIcon from "../icons/Tailwind.astro"
+import UnityIcon from "../icons/Unity.astro"
+import CsharpIcon from "../icons/Csharp.astro"
+
+const TAGS = {
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-[#672825] text-white",
+    icon: LaravelIcon,
+  },
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-[#571319] text-white",
+    icon: AngularIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#23445a] text-white",
+    icon: TailwindIcon,
+  },
+  UNITY: {
+    name: "Tailwind CSS",
+    class: "bg-gray-800/80 text-white",
+    icon: UnityIcon,
+  },
+  CSHARP: {
+    name: "Tailwind CSS",
+    class: "bg-gray-800/80 text-white",
+    icon: CsharpIcon,
+  },
+}
+
+const PROJECTS = [
+  {
+    title: "Escream - Terror movies streaming plataform",
+    description: "Aplicación de streaming de películas de terror ESCREAM",
+    link: "#",
+    github: "https://github.com/hug0gil/ESCREAM",
+    image: "/projects/Escream_so.webp",
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.LARAVEL],
+  },
+]
+---
+
+{
+  PROJECTS.map((project) => (
+    <article>
+      <h3 class='text-2xl font-semibold text-red-300/90 mb-2'>
+        {project.title}
+      </h3>
+      <p class='text-lg mb-4 text-pretty'>{project.description}</p>
+      <ul class='flex gap-x-4 flex-row'>
+        {project.tags.map((tag) => (
+          <span
+            class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-5`}
+          >
+            <tag.icon class='size-4' />
+            <li>{tag.name}</li>
+          </span>
+        ))}
+      </ul>
+      <img
+        src={project.image}
+        alt={`Captura de pantalla del proyecto ${project.title}`}
+        class='rounded shadow-2xl shadow-white/15'
+      />
+    </article>
+  ))
+}

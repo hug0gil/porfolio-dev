@@ -1,20 +1,33 @@
 ---
+import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 import "../styles/global.css"
+
+interface Props {
+  title: string
+  description: string
+}
+
+const { title, description } = Astro.props
 ---
 
-<html lang='en'>
+<html lang='es'>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
-    <title>Mi Porfolio</title>
+    <meta name='description' content={description} />
+    <title>{title}</title>
   </head>
 
-  <body>
+  <body class='px-4'>
+    <div
+      class='fixed inset-0 -z-10'
+      style='background: radial-gradient(125% 125% at 50% 10%, #000 40%, #fca5a5 150%);'
+    >
+    </div>
     <Header />
-    <main>
-      <slot />
-    </main>
+    <slot />
+    <Footer />
   </body>
 </html>
 
@@ -25,6 +38,7 @@ import "../styles/global.css"
 
   html {
     font-family: "Onest Variable", system-ui, sans-serif;
+    scroll-behavior: smooth;
   }
   body {
     background: #050500;
@@ -33,4 +47,20 @@ import "../styles/global.css"
     align-items: center;
     min-height: 100vh;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 </style>
+
+
+ <!--
+  class='fixed inset-0 -z-10'
+  
+    Hace que el fondo:
+    esté fijo al viewport (gracias a fixed);
+    ocupe toda la pantalla (gracias a inset-0);
+    quede detrás del contenido (-z-10). 
+    -->

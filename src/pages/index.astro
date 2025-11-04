@@ -5,47 +5,80 @@ import LinkedInIcon from "../icons/LinkedIn.astro"
 import GitHubIcon from "../icons/GitHub.astro"
 import SocialPill from "../icons/SocialPill.astro"
 import MailPill from "../icons/Mail.astro"
+import CVitaeIcon from "../icons/CVitae.astro"
+import Experience from "../components/Experience.astro"
+import SectionContainer from "../components/SectionContainer.astro"
+import BriefCase from "../icons/BriefCase.astro"
+import Code from "../icons/Code.astro"
+import Projects from "../components/Projects.astro"
 ---
 
-<Layout title='Welcome to Astro.'>
-  <section class='w-full lg:w-[860px] mx-auto py-44'>
-    <img
-      class='rounded-full w-17 h-17 mb-4'
-      src='FotoPerfil.jpeg'
-      alt='hug0gil photo'
-    />
-    <h1 class='text-white text-5xl font-bold flex flex-row gap-x-4 pb-5'>
-      Hola, soy Hugo Gil Bailón<a
-        href='https://www.linkedin.com/in/hugo-gil-bailón'
-        target='_blank'
-        class='flex justify-center items-center'
-        ><Badge>Disponible para trabajar</Badge></a
-      >
-    </h1>
-    <h2 class='text-xl text-wrap'>
-      <span class='text-red-300'>Desarrollador Web y Multiplataforma. </span>
-      <span>De Jerez de la Fontera (Cádiz), España 🇪🇸</span>
-      <span>Especializado en Laravel 🚀 usando principios SOLID</span>
-    </h2>
+<Layout
+  title='Porfolio de Hugo Gil Bailón - Desarrollador Web y Multiplataforma'
+  description='Contrata a Hugo Gil Bailón'
+>
+  <main class='px-4'>
+    <SectionContainer class='py-44 pb-32'>
+      <div class='flex flex-row items-center gap-15'>
+        <img
+          class='rounded-full w-20 h-20 md:w-27 md:h-27 mb-4 object-cover'
+          src='FotoPerfil.jpeg'
+          alt='hug0gil photo'
+          draggable='false'
+        />
+        <a
+          href='https://www.linkedin.com/in/hugo-gil-bailón'
+          target='_blank'
+          class='flex items-center scale-110 transition md:justify-center md:hover:scale-120 -translate-y-2 translate-x-5'
+          ><Badge>Disponible para trabajar</Badge></a
+        >
+      </div>
+      <h1 class='text-white/95 text-5xl font-bold mb-10'>
+        Hola, soy Hugo Gil Bailón
+      </h1>
 
-    <nav class='flex gap-x-4 mt-8'>
-      <SocialPill href='https://www.linkedin.com/in/hugo-gil-bailón'>
-        <LinkedInIcon class='w-6 h-6' />
-        Linkedin
-      </SocialPill>
-      <SocialPill href='https://github.com/hug0gil'>
-        <GitHubIcon class='w-6 h-6' />
-        GitHub
-      </SocialPill>
-      <SocialPill href='mailto:hugiba2005@gmail.com'>
-        <MailPill class='w-6 h-6' />
-        hugiba2005@gmail.com
-      </SocialPill>
-    </nav>
-  </section>
+      <h2 class='text-base sm:text-lg md:text-xl text-white/90 leading-relaxed'>
+        <span class='text-red-300/90'
+          >Desarrollador Web y Multiplataforma.
+        </span>
+        <span>De Jerez de la Fontera (Cádiz), España 🇪🇸</span>
+        <span>Especializado en Laravel 🚀 usando principios SOLID</span>
+      </h2>
+
+      <nav class='flex gap-x-4 mt-8'>
+        <SocialPill href='https://www.linkedin.com/in/hugo-gil-bailón'>
+          <LinkedInIcon class='size-4 lg:size-6' />
+          Linkedin
+        </SocialPill>
+        <SocialPill href='https://github.com/hug0gil'>
+          <GitHubIcon class='size-4 lg:size-6' />
+          GitHub
+        </SocialPill>
+        <SocialPill href='CV-HugoGilBailon.pdf' download>
+          <CVitaeIcon class='size-4 lg:size-6' />
+          Descargar CV
+        </SocialPill>
+        <SocialPill href='mailto:hugiba2005@gmail.com'>
+          <MailPill class='size-4 lg:size-6' />
+          Contáctame
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id='experiencia' class='pb-20'>
+      <h2 class='text-2xl font-semibold mb-6 flex gap-x-3 items-center'>
+        <BriefCase class='size-7' />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id='proyectos'>
+      <h2 class='text-2xl font-semibold mb-6 flex gap-x-3 items-center'>
+        <Code class='size-7' />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
 </Layout>
-
-<!--<img
-      src='https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.giff' la f
-      width='35'
-    /> -->
