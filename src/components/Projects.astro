@@ -22,13 +22,13 @@ const TAGS = {
     icon: TailwindIcon,
   },
   UNITY: {
-    name: "Tailwind CSS",
+    name: "Unity",
     class: "bg-gray-800/80 text-white",
     icon: UnityIcon,
   },
   CSHARP: {
-    name: "Tailwind CSS",
-    class: "bg-gray-800/80 text-white",
+    name: "C#",
+    class: "bg-[#5f00fb] text-white",
     icon: CsharpIcon,
   },
 }
@@ -42,12 +42,20 @@ const PROJECTS = [
     image: "/projects/Escream_so.webp",
     tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.LARAVEL],
   },
+  {
+    title: "BeardLess - 2D Videogame",
+    description: "Videojuego creado con Unity en C#",
+    link: "#",
+    github: "https://github.com/hug0gil/Beardless",
+    image: "/projects/Beardless_so.webp",
+    tags: [TAGS.UNITY, TAGS.CSHARP],
+  },
 ]
 ---
 
 {
   PROJECTS.map((project) => (
-    <article>
+    <article class="mb-7">
       <h3 class='text-2xl font-semibold text-red-300/90 mb-2'>
         {project.title}
       </h3>

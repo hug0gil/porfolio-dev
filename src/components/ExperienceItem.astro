@@ -2,8 +2,8 @@
 interface Props {
   title: string
   description: string
-  link: string
   date: string
+  link?: string //? para poner que es opcional
 }
 const { title, description, link, date } = Astro.props
 ---
