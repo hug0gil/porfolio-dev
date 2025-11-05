@@ -4,6 +4,9 @@ import AngularIcon from "../icons/Angular.astro"
 import TailwindIcon from "../icons/Tailwind.astro"
 import UnityIcon from "../icons/Unity.astro"
 import CsharpIcon from "../icons/Csharp.astro"
+import SocialPill from "../icons/SocialPill.astro"
+import GitHubIcon from "../icons/GitHub.astro"
+import PreviewIcon from "../icons/Preview.astro"
 
 const TAGS = {
   LARAVEL: {
@@ -35,46 +38,69 @@ const TAGS = {
 
 const PROJECTS = [
   {
-    title: "Escream - Terror movies streaming plataform",
-    description: "Aplicación de streaming de películas de terror ESCREAM",
+    title: "ESCREAM - SVOD de terror ",
+    description:
+      "Aplicación de streaming en vivo de películas de terror de habla castellana y hispanoamericana",
     link: "#",
+    comment: "SVOD significa streaming video on demand",
     github: "https://github.com/hug0gil/ESCREAM",
     image: "/projects/Escream_so.webp",
     tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.LARAVEL],
+    preview: false,
   },
   {
     title: "BeardLess - 2D Videogame",
-    description: "Videojuego creado con Unity en C#",
+    description:
+      "Videojuego de plataformas con estética pirata y retro desarrollado en C#",
     link: "#",
     github: "https://github.com/hug0gil/Beardless",
     image: "/projects/Beardless_so.webp",
     tags: [TAGS.UNITY, TAGS.CSHARP],
+    preview: true,
   },
 ]
 ---
 
 {
   PROJECTS.map((project) => (
-    <article class="mb-7">
-      <h3 class='text-2xl font-semibold text-red-300/90 mb-2'>
-        {project.title}
-      </h3>
-      <p class='text-lg mb-4 text-pretty'>{project.description}</p>
-      <ul class='flex gap-x-4 flex-row'>
-        {project.tags.map((tag) => (
-          <span
-            class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-5`}
-          >
-            <tag.icon class='size-4' />
-            <li>{tag.name}</li>
-          </span>
-        ))}
-      </ul>
-      <img
-        src={project.image}
-        alt={`Captura de pantalla del proyecto ${project.title}`}
-        class='rounded shadow-2xl shadow-white/15'
-      />
+    <article
+      class={`${Astro.props.class} mb-15 flex flex-col sm:flex-row gap-6`}
+    >
+      <div>
+        <img
+          src={project.image}
+          alt={`Captura de pantalla del proyecto ${project.title}`}
+          class='rounded shadow-2xl shadow-white/15 w-[432px] h-[244px] object-cover'
+        />
+      </div>
+      <div>
+        <h3 class='text-2xl font-semibold text-red-300/90 mb-2'>
+          {project.title}
+        </h3>
+        <p class='text-lg mb-4 text-pretty'>{project.description}</p>
+        <ul class='flex gap-x-4 flex-row mb-3'>
+          {project.tags.map((tag) => (
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-5`}
+            >
+              <tag.icon class='size-4' />
+              <li>{tag.name}</li>
+            </span>
+          ))}
+        </ul>
+        <div class={`flex flex-row gap-5 items-center justify-center mt-7`}>
+          <SocialPill href='https://github.com/hug0gil'>
+            <GitHubIcon class='size-4 sm:size-8' />
+            Code
+          </SocialPill>
+          {project.preview && (
+            <SocialPill href='https://kalandraka86.itch.io/beardless'>
+              <PreviewIcon class='size-4 sm:size-8' />
+              Preview
+            </SocialPill>
+          )}
+        </div>
+      </div>
     </article>
   ))
 }

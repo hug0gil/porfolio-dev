@@ -1,11 +1,12 @@
 <a
-  class={`bg-white/5
+  class={`${Astro.props.class}
+  bg-white/5
   border border-white/10 rounded-full  
   flex justify-center items-center gap-x-2
   py-1 px-2 lg:py-2 lg:px-4 
   text-xs lg:text-base
   transition
-  hover:scale-110 hover:bg-white/10`}
+  duration-300 hover:scale-105 hover:brightness-125 hover:shadow-[0_0_15px_currentColor]`}
   href={Astro.props.href}
   target='_blank'
 >
