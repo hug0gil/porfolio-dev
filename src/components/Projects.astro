@@ -46,7 +46,9 @@ const PROJECTS = [
     github: "https://github.com/hug0gil/ESCREAM",
     image: "/projects/Escream_so.webp",
     tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.LARAVEL],
-    preview: false,
+    hasPreview: false,
+    preview: "#",
+    repo: "https://github.com/hug0gil/ESCREAM",
   },
   {
     title: "BeardLess - 2D Videogame",
@@ -56,7 +58,9 @@ const PROJECTS = [
     github: "https://github.com/hug0gil/Beardless",
     image: "/projects/Beardless_so.webp",
     tags: [TAGS.UNITY, TAGS.CSHARP],
-    preview: true,
+    hasPreview: true,
+    preview: "https://kalandraka86.itch.io/beardless",
+    repo: "https://github.com/hug0gil/Beardless",
   },
 ]
 ---
@@ -78,24 +82,24 @@ const PROJECTS = [
           {project.title}
         </h3>
         <p class='text-lg mb-4 text-pretty'>{project.description}</p>
-        <ul class='flex gap-x-4 flex-row mb-3'>
+        <ul class='flex gap-x-4 flex-row mb-3 justify-center'>
           {project.tags.map((tag) => (
             <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-5`}
+              class={`flex gap-x-2 rounded-full text-[15px] ${tag.class} py-1 px-2 mb-5 items-center`}
             >
-              <tag.icon class='size-4' />
+              <tag.icon class='size-5' />
               <li>{tag.name}</li>
             </span>
           ))}
         </ul>
         <div class={`flex flex-row gap-5 items-center justify-center mt-7`}>
-          <SocialPill href='https://github.com/hug0gil'>
-            <GitHubIcon class='size-4 sm:size-8' />
+          <SocialPill href={project.repo} class='text-[20px]'>
+            <GitHubIcon class='size-7 sm:size-8' />
             Code
           </SocialPill>
-          {project.preview && (
-            <SocialPill href='https://kalandraka86.itch.io/beardless'>
-              <PreviewIcon class='size-4 sm:size-8' />
+          {project.hasPreview && (
+            <SocialPill href={project.preview} class='text-[20px]'>
+              <PreviewIcon class='size-7 sm:size-8' />
               Preview
             </SocialPill>
           )}

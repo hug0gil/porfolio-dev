@@ -19,9 +19,9 @@ import Projects from "../components/Projects.astro"
 >
   <main class='px-4'>
     <SectionContainer class='py-12 md:py-27 md:pb-32'>
-      <div class='flex flex-row gap-10 sm:gap-15 mb-7'>
+      <div class='flex flex-row sm:gap-15 mb-7 gap-x-10'>
         <img
-          class='rounded-full w-17 h-17 sm:w-20 sm:h-20 md:w-30 md:h-30'
+          class='rounded-full w-18 h-18 sm:w-20 sm:h-20 md:w-28 md:h-28'
           src='FotoPerfil.jpeg'
           alt='hug0gil photo'
           draggable='false'
@@ -29,8 +29,8 @@ import Projects from "../components/Projects.astro"
         <a
           href='https://www.linkedin.com/in/hugo-gil-bailón'
           target='_blank'
-          class=`flex items-center scale-80 sm:scale-100 md:scale-120 transition md:justify-center
-           hover:scale-85 sm:hover:scale-110 md:hover:scale-130 
+          class=`flex items-center scale-90 sm:scale-100 md:scale-120 transition md:justify-center
+           hover:scale-95 sm:hover:scale-110 md:hover:scale-130 
            duration-300 ease-in-out`
           ><Badge>Disponible para trabajar</Badge></a
         >
@@ -51,26 +51,26 @@ import Projects from "../components/Projects.astro"
 
       <nav class='grid grid-cols-2 sm:flex gap-3 sm:gap-x-4 mt-8'>
         <SocialPill href='https://www.linkedin.com/in/hugo-gil-bailón'>
-          <LinkedInIcon class='size-4 sm:size-6' />
+          <LinkedInIcon class='size-5 sm:size-6' />
           Linkedin
         </SocialPill>
         <SocialPill href='https://github.com/hug0gil'>
-          <GitHubIcon class='size-4 sm:size-6' />
+          <GitHubIcon class='size-5 sm:size-6' />
           GitHub
         </SocialPill>
         <SocialPill href='CV-HugoGilBailon.pdf' download>
-          <CVitaeIcon class='size-5 sm:size-7' />
+          <CVitaeIcon class='size-6 sm:size-7' />
           Descargar CV
         </SocialPill>
         <SocialPill href='mailto:hugiba2005@gmail.com'>
-          <MailPill class='size-5 sm:size-7' />
+          <MailPill class='size-6 sm:size-7' />
           Contáctame
         </SocialPill>
       </nav>
     </SectionContainer>
 
     <SectionContainer id='experiencia' class='pb-20'>
-      <h2 class='text-2xl font-semibold mb-6 flex gap-x-3 items-center'>
+      <h2 class='text-2xl font-semibold mb-6 flex gap-x-3 items-center text-white'>
         <BriefCase class='size-7' />
         Experiencia laboral
       </h2>
@@ -78,12 +78,12 @@ import Projects from "../components/Projects.astro"
     </SectionContainer>
 
     <SectionContainer id='proyectos'>
-      <h2 class='text-2xl font-semibold mb-6 flex gap-x-3 items-center'>
+      <h2 class='text-2xl font-semibold mb-6 flex gap-x-3 items-center text-white'>
         <Code class='size-7' />
         Proyectos
       </h2>
       <Projects
-        class='flex flex-col space-y-8 group md:flex-row md:space-x-8 md:space-y-0'
+        class='flex flex-col space-y-8 group md:flex-row md:space-x-8 md:space-y-0 text-white'
       />
     </SectionContainer>
   </main>
