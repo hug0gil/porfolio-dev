@@ -1,89 +1,96 @@
 ---
-import Badge from "../components/Badge.astro"
-import Layout from "../layouts/Layout.astro"
-import LinkedInIcon from "../icons/LinkedIn.astro"
-import GitHubIcon from "../icons/GitHub.astro"
-import SocialPill from "../icons/SocialPill.astro"
-import MailPill from "../icons/Mail.astro"
-import CVitaeIcon from "../icons/CVitae.astro"
-import Experience from "../components/Experience.astro"
-import SectionContainer from "../components/SectionContainer.astro"
-import BriefCase from "../icons/BriefCase.astro"
-import Code from "../icons/Code.astro"
-import Projects from "../components/Projects.astro"
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import SocialPill from "../icons/SocialPill.astro";
+import MailPill from "../icons/Mail.astro";
+import CVitaeIcon from "../icons/CVitae.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import BriefCase from "../icons/BriefCase.astro";
+import Code from "../icons/Code.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout
-  title='Porfolio de Hugo Gil Bailón - Desarrollador Web y Multiplataforma'
-  description='Contrata a Hugo Gil Bailón'
+  title="Porfolio de Hugo Gil Bailón - Desarrollador Web y Multiplataforma"
+  description="Contrata a Hugo Gil Bailón"
 >
-  <main class='px-4'>
-    <SectionContainer class='py-12 md:py-27 md:pb-32'>
-      <div class='flex flex-row sm:gap-15 mb-7 gap-x-10'>
+  <main class="px-4">
+    <SectionContainer class="py-12 md:py-27 md:pb-32">
+      <div class="flex flex-row sm:gap-15 mb-7 gap-x-10">
         <img
-          class='rounded-full w-18 h-18 sm:w-20 sm:h-20 md:w-28 md:h-28'
-          src='FotoPerfil.jpeg'
-          alt='hug0gil photo'
-          draggable='false'
+          class="rounded-full w-18 h-18 sm:w-20 sm:h-20 md:w-28 md:h-28"
+          src="FotoPerfil.jpeg"
+          alt="hug0gil photo"
+          draggable="false"
         />
         <a
-          href='https://www.linkedin.com/in/hugo-gil-bailón'
-          target='_blank'
+          href="https://www.linkedin.com/in/hugo-gil-bailón"
+          target="_blank"
           class=`flex items-center scale-90 sm:scale-100 md:scale-120 transition md:justify-center
            hover:scale-95 sm:hover:scale-110 md:hover:scale-130 
            duration-300 ease-in-out`
           ><Badge>Disponible para trabajar</Badge></a
         >
       </div>
-      <h1 class='text-white/95 text-3xl md:text-5xl font-bold mb-5'>
+      <h1 class="text-white/95 text-3xl md:text-5xl font-bold mb-5">
         Hola, soy Hugo Gil Bailón
       </h1>
 
       <h2
-        class='text-base text-pretty sm:text-lg md:text-xl text-white/90 leading-relaxed'
+        class="text-base text-pretty sm:text-lg md:text-xl text-white/90 leading-relaxed"
       >
-        <span class='text-red-300/90'
+        <span class="text-red-300/90"
           >Desarrollador Web y Multiplataforma.
         </span>
-        <span>De Jerez de la Frontera (Cádiz), España 🇪🇸</span>
-        <span>Especializado en Laravel 🚀 usando principios SOLID</span>
+        <span>Resido en Jerez de la Frontera (Cádiz), España 🇪🇸.</span>
+        <span>
+          Especializado en Angular 🔺 con enfoque en Separation of Concerns
+          (SoC) y desarrollo backend con Laravel 🚀 siguiendo principios SOLID
+        </span>
       </h2>
 
-      <nav class='grid grid-cols-2 sm:flex gap-3 sm:gap-x-4 mt-8'>
-        <SocialPill href='https://www.linkedin.com/in/hugo-gil-bailón'>
-          <LinkedInIcon class='size-5 sm:size-6' />
+      <nav class="grid grid-cols-2 sm:flex gap-3 sm:gap-x-4 mt-8">
+        <SocialPill href="https://www.linkedin.com/in/hugo-gil-bailón">
+          <LinkedInIcon class="size-5 sm:size-6" />
           Linkedin
         </SocialPill>
-        <SocialPill href='https://github.com/hug0gil'>
-          <GitHubIcon class='size-5 sm:size-6' />
+        <SocialPill href="https://github.com/hug0gil">
+          <GitHubIcon class="size-5 sm:size-6" />
           GitHub
         </SocialPill>
-        <SocialPill href='CV-HugoGilBailon.pdf' download>
-          <CVitaeIcon class='size-6 sm:size-7' />
+        <SocialPill href="CV-HugoGilBailon.pdf" download>
+          <CVitaeIcon class="size-6 sm:size-7" />
           Descargar CV
         </SocialPill>
-        <SocialPill href='mailto:hugiba2005@gmail.com'>
-          <MailPill class='size-6 sm:size-7' />
+        <SocialPill href="mailto:hugiba2005@gmail.com">
+          <MailPill class="size-6 sm:size-7" />
           Contáctame
         </SocialPill>
       </nav>
     </SectionContainer>
 
-    <SectionContainer id='experiencia' class='pb-20'>
-      <h2 class='text-2xl font-semibold mb-6 flex gap-x-3 items-center text-white'>
-        <BriefCase class='size-7' />
+    <SectionContainer id="experiencia" class="pb-20">
+      <h2
+        class="text-2xl font-semibold mb-6 flex gap-x-3 items-center text-white"
+      >
+        <BriefCase class="size-7" />
         Experiencia laboral
       </h2>
       <Experience />
     </SectionContainer>
 
-    <SectionContainer id='proyectos'>
-      <h2 class='text-2xl font-semibold mb-6 flex gap-x-3 items-center text-white'>
-        <Code class='size-7' />
+    <SectionContainer id="proyectos">
+      <h2
+        class="text-2xl font-semibold mb-6 flex gap-x-3 items-center text-white"
+      >
+        <Code class="size-7" />
         Proyectos
       </h2>
       <Projects
-        class='flex flex-col space-y-8 group md:flex-row md:space-x-8 md:space-y-0 text-white'
+        class="flex flex-col space-y-8 group md:flex-row md:space-x-8 md:space-y-0 text-white"
       />
     </SectionContainer>
   </main>

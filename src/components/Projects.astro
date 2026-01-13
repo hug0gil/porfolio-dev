@@ -1,12 +1,12 @@
 ---
-import LaravelIcon from "../icons/Laravel.astro"
-import AngularIcon from "../icons/Angular.astro"
-import TailwindIcon from "../icons/Tailwind.astro"
-import UnityIcon from "../icons/Unity.astro"
-import CsharpIcon from "../icons/Csharp.astro"
-import SocialPill from "../icons/SocialPill.astro"
-import GitHubIcon from "../icons/GitHub.astro"
-import PreviewIcon from "../icons/Preview.astro"
+import LaravelIcon from "../icons/Laravel.astro";
+import AngularIcon from "../icons/Angular.astro";
+import CSSIcon from "../icons/CSS.astro";
+import UnityIcon from "../icons/Unity.astro";
+import CsharpIcon from "../icons/Csharp.astro";
+import SocialPill from "../icons/SocialPill.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import PreviewIcon from "../icons/Preview.astro";
 
 const TAGS = {
   LARAVEL: {
@@ -19,10 +19,10 @@ const TAGS = {
     class: "bg-[#571319] text-white",
     icon: AngularIcon,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#23445a] text-white",
-    icon: TailwindIcon,
+  CSS: {
+    name: "CSS",
+    class: "bg-[#5d5a90] text-white",
+    icon: CSSIcon,
   },
   UNITY: {
     name: "Unity",
@@ -34,7 +34,7 @@ const TAGS = {
     class: "bg-[#5f00fb] text-white",
     icon: CsharpIcon,
   },
-}
+};
 
 const PROJECTS = [
   {
@@ -45,7 +45,7 @@ const PROJECTS = [
     comment: "SVOD significa streaming video on demand",
     github: "https://github.com/hug0gil/ESCREAM",
     image: "/projects/Escream_so.webp",
-    tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.LARAVEL],
+    tags: [TAGS.ANGULAR, TAGS.CSS, TAGS.LARAVEL],
     hasPreview: false,
     preview: "#",
     repo: "https://github.com/hug0gil/ESCREAM",
@@ -62,7 +62,7 @@ const PROJECTS = [
     preview: "https://kalandraka86.itch.io/beardless",
     repo: "https://github.com/hug0gil/Beardless",
   },
-]
+];
 ---
 
 {
@@ -74,32 +74,32 @@ const PROJECTS = [
         <img
           src={project.image}
           alt={`Captura de pantalla del proyecto ${project.title}`}
-          class='rounded shadow-2xl shadow-white/15 w-[432px] h-[244px] object-cover'
+          class="rounded shadow-2xl shadow-white/15 w-[432px] h-[244px] object-cover"
         />
       </div>
       <div>
-        <h3 class='text-2xl font-semibold text-red-300/90 mb-2'>
+        <h3 class="text-2xl font-semibold text-red-300/90 mb-4">
           {project.title}
         </h3>
-        <p class='text-lg mb-4 text-pretty'>{project.description}</p>
-        <ul class='flex gap-x-4 flex-row mb-3 justify-center'>
+        <p class="text-lg mb-4 text-pretty">{project.description}</p>
+        <ul class="flex gap-x-4 flex-row mb-3 justify-center mt-7">
           {project.tags.map((tag) => (
             <span
               class={`flex gap-x-2 rounded-full text-[15px] ${tag.class} py-1 px-2 mb-5 items-center`}
             >
-              <tag.icon class='size-5' />
+              <tag.icon class="size-5 -translate-y-0.5" />
               <li>{tag.name}</li>
             </span>
           ))}
         </ul>
         <div class={`flex flex-row gap-5 items-center justify-center mt-7`}>
-          <SocialPill href={project.repo} class='text-[20px]'>
-            <GitHubIcon class='size-7 sm:size-8' />
+          <SocialPill href={project.repo} class="text-[20px]">
+            <GitHubIcon class="size-7 sm:size-8" />
             Code
           </SocialPill>
           {project.hasPreview && (
-            <SocialPill href={project.preview} class='text-[20px]'>
-              <PreviewIcon class='size-7 sm:size-8' />
+            <SocialPill href={project.preview} class="text-[20px]">
+              <PreviewIcon class="size-7 sm:size-8" />
               Preview
             </SocialPill>
           )}
