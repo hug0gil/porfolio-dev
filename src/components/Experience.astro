@@ -1,13 +1,20 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
+import ExperienceItem from "./ExperienceItem.astro";
 
 const EXPERIENCE = [
   {
+    date: "mar. 2026 - Actualidad",
+    title: "Full-Stack Developer",
+    company: "LegalNeuron",
+    description:
+      "Prácticas de FPGS DAW realizadas Angular, Ionic y NodeJS.",
+  },
+  {
     date: "mar. 2025 - jun. 2025",
-    title: "Desarrollador de Software",
+    title: "Software Developer",
     company: "Astec Informática",
     description:
-      "Prácticas de FPGS DAM enfocadas en la creación de un ERP funcional, proyecto realizado con Drupal 10, Firebird 5.0, PL/SQL y Delphi 2010.",
+      "Prácticas de FPGS DAM enfocadas en la creación de un ERP funcional, proyecto realizado con el IDE Delphi 2010 (Object Pascal) y Drupal 10 (PHP) junto a tecnologías como Firebird 5.0, PL/SQL.",
   },
   {
     date: "jun. 2024 - ago. 2024",
@@ -21,15 +28,16 @@ const EXPERIENCE = [
     date: "mar. 2023 - jun. 2023",
     title: "Técnico de reparación de equipos informáticos",
     company: "CUBiT Information Technology Solutions",
-    description: "Prácticas realizadas mediante el programa Erasmus + en Viena, Austria.",
+    description:
+      "Prácticas realizadas mediante el programa Erasmus + en Viena, Austria.",
   },
-]
+];
 ---
 
-<ol class='relative border-s border-white/80 ml-3'>
+<ol class="relative border-s border-white/80 ml-3">
   {
     EXPERIENCE.map((experience) => (
-      <li class='mb-12 ms-4'>
+      <li class="mb-12 ms-4">
         <ExperienceItem {...experience} />
       </li>
     ))
