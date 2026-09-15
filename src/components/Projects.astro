@@ -40,21 +40,20 @@ const PROJECTS = [
   {
     title: "ESCREAM - SVOD de terror ",
     description:
-      "Aplicación de streaming en vivo de películas de terror de habla castellana y hispanoamericana",
-    link: "#",
+      "Plataforma SVOD de películas de terror de habla castellana e hispanoamericana",
     comment: "SVOD significa streaming video on demand",
     github: "https://github.com/hug0gil/ESCREAM",
     image: "/projects/Escream_so.webp",
     tags: [TAGS.ANGULAR, TAGS.CSS, TAGS.NEST],
-    hasPreview: false,
-    preview: "#",
+    hasPreview: true,
+    hasDisclaimer: true,
+    preview: "http://143.47.51.8/",
     repo: "https://github.com/hug0gil/ESCREAM",
   },
   {
     title: "BeardLess - 2D Videogame",
     description:
       "Videojuego de plataformas con estética pirata y retro desarrollado en C#",
-    link: "#",
     github: "https://github.com/hug0gil/Beardless",
     image: "/projects/Beardless_so.webp",
     tags: [TAGS.UNITY, TAGS.CSHARP],
@@ -68,28 +67,41 @@ const PROJECTS = [
 {
   PROJECTS.map((project) => (
     <article
-      class={`${Astro.props.class} mb-15 flex flex-col sm:flex-row gap-6`}
+      class={`${Astro.props.class} mb-15 flex flex-col sm:flex-row gap-8 items-start`}
     >
-      <div>
+      <div class="shrink-0 w-[320px]">
         <img
           src={project.image}
           alt={`Captura de pantalla del proyecto ${project.title}`}
-          class="rounded shadow-2xl shadow-white/15 w-[432px] h-[244px] object-cover"
+          class="w-full h-auto rounded shadow-2xl shadow-white/15"
         />
       </div>
-      <div>
+
+      <div class="flex-1 min-w-0">
         <h3 class="text-2xl font-semibold text-red-300/90 mb-4">
           {project.title}
         </h3>
         <p class="text-lg mb-4 text-pretty">{project.description}</p>
+        {project.hasDisclaimer && (
+          <div class="mt-4 rounded-lg border border-yellow-500/20 bg-yellow-500/5 px-4 py-3 text-sm text-zinc-400">
+            <p class="text-pretty">
+              Esta página ha sido desarrollada exclusivamente con fines
+              educativos y académicos como parte de mi TFG. Se trata de una
+              simulación de una plataforma SVOD y no constituye un servicio
+              comercial real. La aplicación se encuentra en un entorno de
+              demostración sin HTTPS. No introduzcas datos personales,
+              contraseñas ni información sensible.
+            </p>
+          </div>
+        )}
         <ul class="flex gap-x-4 flex-row mb-3 justify-center mt-7">
           {project.tags.map((tag) => (
-            <span
+            <li
               class={`flex gap-x-2 rounded-full text-[15px] ${tag.class} py-1 px-2 mb-5 items-center`}
             >
               <tag.icon class="size-5 -translate-y-0.5" />
-              <li>{tag.name}</li>
-            </span>
+              {tag.name}
+            </li>
           ))}
         </ul>
         <div class={`flex flex-row gap-5 items-center justify-center mt-7`}>
